@@ -19,3 +19,5 @@ function drawGrid(rows, cols) {
         GRID_CONTAINER.appendChild(cell)
     }
 }
+
+drawGrid(100,100)

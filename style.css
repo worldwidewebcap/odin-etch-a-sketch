@@ -1,7 +1,13 @@
 #grid-container {
     border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .cell {
     border: 1px solid red;
+    height: 10px;
+    width: 10px;
+    display: flex;
+    flex: 1 1 10px;
 }
