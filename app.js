@@ -13,12 +13,20 @@ function drawGrid(size) {
         // Add a class to the cell element for styling
         cell.className = "cell";
         // On hover, change a cell's background color
-        cell.addEventListener('mouseover', (e) => {
+        cell.addEventListener('mouseover', () => {
             cell.style.backgroundColor = 'white';
         })
+
         // Append the cell element to the grid container element
         GRID_CONTAINER.appendChild(cell);
     }
+
+    // Select the reset button
+    const RESET = document.querySelector('#reset-btn')
+    RESET.addEventListener('click', () => {
+        GRID_CONTAINER.innerHTML = ''
+        drawGrid(50, 50)
+    })
 }
 
 drawGrid(50, 50);
