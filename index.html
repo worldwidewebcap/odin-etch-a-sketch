@@ -11,15 +11,28 @@
 
 <body>
     <div class="wrapper">
-        <div id="input-submit">
-            <label id="size-label" for="grid-size">What size grid?</label>
-            <input type="text" id="grid-size" name="grid-size">
-            <button type="submit" id="submit-btn" name="grid-size">SUBMIT</button>
-        </div>
-        <div id="grid-slider">
-            <div id="grid-container"></div>
-            <div id="slide-container">
-                <input type="range" min="1" max="100" value="0" class="slider" id="myRange">
+        <div class="center">
+            <div class="top-center">
+                <div class="left">
+                    <div class="instructions">
+                        <p id="text">
+                            Hold ctrl and hover, or click to draw.<br>Move the slider to the end to clear the grid.
+                        </p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div id="input-submit">
+                        <input type="text" id="grid-size" name="grid-size" placeholder="Size: 20">
+                        <button type="submit" id="submit-btn" name="grid-size">SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="grid-slider">
+                <div id="grid-container"></div>
+                <div id="slide-container">
+                    <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
+                </div>
             </div>
         </div>
     </div>

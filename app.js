@@ -9,12 +9,9 @@ function drawGrid(size) {
 
     // When clicked, reload the grid with new size
     SUBMIT.addEventListener('click', () => {
-        const MAX = 100;
-        const MIN = 2
-        const text = document.querySelector('.text')
-        let inputField = document.querySelector('#grid-size')
-        let inputValue = inputField.value
-        if (inputValue > MAX || inputValue < MIN) {
+
+        let inputValue = document.querySelector('#grid-size').value
+        if (inputValue > 100 || inputValue < 2) {
             alert(`Max Size: 100\nMin Size: 2`)
             location.reload()
         } else {
@@ -41,24 +38,36 @@ function drawGrid(size) {
                 cell.dispatchEvent(mouseOver)
                 cell.style.backgroundColor = '#ccc';
             }
+            // If the mouse is clicked, also change the cell's background color
+            cell.addEventListener('click', () => {
+                cell.style.backgroundColor = '#ccc';
+            })
+        })
+
+        // If user is on mobile and touches cell, change cell's background color
+        cell.addEventListener('touchstart', () => {
+            cell.style.backgroundColor = '#ccc';
         })
 
         // Append the cell element to the grid container element
         GRID_CONTAINER.appendChild(cell);
     }
 
+    // Function to reset the grid
     function slideReset() {
         if (SLIDER.value != 100) {
             return
         }
-        GRID_CONTAINER.innerHTML = ''
+        GRID_CONTAINER.innerHTML = '';
         drawGrid(DEFAULT)
-        SLIDER.value = 0
+        SLIDER.value = 0;
 
-    }
-    const SLIDER = document.querySelector('.slider')
+    };
+    // Select the range slider
+    const SLIDER = document.querySelector('.slider');
+    // If the slider is moved to the end, reset the grid
     SLIDER.onchange = function () {
-        slideReset()
+        slideReset();
     };
 
 }
