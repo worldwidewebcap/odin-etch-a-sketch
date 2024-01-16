@@ -1,0 +1,7 @@
+#grid-container {
+    border: 1px solid black;
+}
+
+.cell {
+    border: 1px solid red;
+}
