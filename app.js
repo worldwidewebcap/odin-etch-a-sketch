@@ -1,8 +1,6 @@
 // Function to draw a grid
 function drawGrid(size) {
 
-    function brandNew() { drawGrid(DEFAULT) }
-
     // Select the grid container element
     const GRID_CONTAINER = document.querySelector("#grid-container");
 
@@ -36,24 +34,35 @@ function drawGrid(size) {
         const cell = document.createElement("div");
         // Add a class to the cell element for styling
         cell.className = "cell";
-        // On hover, change a cell's background color
-        cell.addEventListener('mouseover', () => {
-            cell.style.backgroundColor = 'white';
+        // On hover, if ctrl is held, change a cell's background color
+        cell.addEventListener('mouseover', (e) => {
+            if (e.ctrlKey) {
+                const mouseOver = new Event('mouseover');
+                cell.dispatchEvent(mouseOver)
+                cell.style.backgroundColor = '#ccc';
+            }
         })
 
         // Append the cell element to the grid container element
         GRID_CONTAINER.appendChild(cell);
     }
 
-    // Select the reset button
-    const RESET = document.querySelector('#reset-btn')
-
-    // When clicked, reset the to default settings
-    RESET.addEventListener('click', () => {
+    function slideReset() {
+        if (SLIDER.value != 100) {
+            return
+        }
         GRID_CONTAINER.innerHTML = ''
         drawGrid(DEFAULT)
-    })
+        SLIDER.value = 0
+
+    }
+    const SLIDER = document.querySelector('.slider')
+    SLIDER.onchange = function () {
+        slideReset()
+    };
+
 }
+
 
 // Set the default grid size
 const DEFAULT = 20;

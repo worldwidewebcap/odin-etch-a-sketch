@@ -3,17 +3,37 @@
     padding: 0;
 }
 
-#container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#input-submit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#submit-btn {
+    width: 80px;
+}
+
+#grid-slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #grid-container {
     border: 1px solid black;
     width: 500px;
-    height: 500px;
+    height: 400px;
     display: grid;
     margin: 10px;
 }
@@ -24,10 +44,31 @@
 }
 
 #grid-size {
-    max-width: 50px;
+    max-width: 75px;
     text-align: center;
 }
 
-#submit-btn {
-    width: 100px;
+
+.slider {
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 1px solid black;
+    height: 6px;
+    background: #ccc;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    height: 40px;
+    width: 40px;
+    background: transparent;
+    background-image: url("https://www.theodinproject.com/mstile-310x310.png");
+    background-size: cover;
+    transform: rotateZ(20deg);
+}
+
+#slide-container {
+    padding: 20px;
 }
