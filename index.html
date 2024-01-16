@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,16 @@
     <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
 </head>
+
 <body>
     <div id="container">
+        <label for="grid-size">What size grid?</label>
+        <input type="text" id="grid-size" name="grid-size">
+        <p class="text"></p>
+        <button type="submit" id="submit-btn" name="grid-size">SUBMIT</button>
         <div id="grid-container"></div>
         <button id="reset-btn">RESET</button>
     </div>
 </body>
+
 </html>

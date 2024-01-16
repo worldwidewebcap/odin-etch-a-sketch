@@ -22,3 +22,12 @@
     border: .5px solid black;
     background-color: grey;
 }
+
+#grid-size {
+    max-width: 50px;
+    text-align: center;
+}
+
+#submit-btn {
+    width: 100px;
+}
