@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
@@ -8,27 +9,25 @@
 
 .wrapper {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background-color: #6642c1
 }
 
-.left {
+.left, .leftPage {
     display: flex;
-    justify-content: start;
     align-items: center;
     text-align: center;
 }
 
 .top-center {
-    width: 100vw;
     display: flex;
     justify-content: center;
     gap: 50px;
 }
 
 
-.center {
+.centerPage {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -80,7 +79,7 @@
     cursor: pointer;
     border-radius: 15px;
     border: 1px solid black;
-    height: 6px;
+    height: 10px;
     background: #ccc;
 }
 
@@ -94,6 +93,30 @@
     transform: rotateZ(20deg);
 }
 
-#slide-container {
+.bottomPage #slide-container {
     padding: 20px;
+}
+
+.rightPage {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+#slide-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    gap: 20px;
+}
+
+.verticle {
+    appearance: slider-vertical;
+    width: 8px;
+    height: 100px;
+    padding: 0 5px;
+    background-color: #ccc;
+    color: green;
+
 }

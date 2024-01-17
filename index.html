@@ -11,7 +11,15 @@
 
 <body>
     <div class="wrapper">
-        <div class="center">
+        <div class="leftPage">
+            <div id="color-options">
+                <p>COLOR PICKER</p>
+                <p>RAINBOW</p>
+                <p>BLACK</p>
+                <p>GREY</p>
+            </div>
+        </div>
+        <div class="centerPage">
             <div class="top-center">
                 <div class="left">
                     <div class="instructions">
@@ -27,12 +35,18 @@
                     </div>
                 </div>
             </div>
-
-            <div id="grid-slider">
-                <div id="grid-container"></div>
-                <div id="slide-container">
-                    <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
+            <div class="bottomPage">
+                <div id="grid-slider">
+                    <div id="grid-container"></div>
+                    <div id="slide-container">
+                        <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
+                    </div>
                 </div>
+            </div>
+        </div>
+        <div class="rightPage">
+            <div id="slide-container">
+                <input orient="vertical" type="range" class="verticle" min="0" max="10" value="0">
             </div>
         </div>
     </div>
